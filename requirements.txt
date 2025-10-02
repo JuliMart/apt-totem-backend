@@ -4,19 +4,22 @@ uvicorn[standard]>=0.29,<1.0
 pydantic>=2,<3
 python-multipart>=0.0.9,<0.1.0
 
+# Base de datos
+sqlalchemy>=2.0,<3.0
+alembic>=1.13,<2.0
 
+# Computer Vision y AI
 numpy==2.0.2
 opencv-python==4.12.0.88
 pillow==11.3.0
 scikit-learn==1.6.1
 
-
+# Speech Recognition
 faster-whisper==1.0.3
 
-
+# Utilidades
 python-dotenv>=1.0,<2.0
 requests>=2.31,<3.0
-
 
 # pydantic-settings>=2.5,<3.0   # Si prefieres cargar .env con Settings
 # mediapipe==0.10.14            # SOLO con Python >= 3.10 (en 3.9 no instalar)

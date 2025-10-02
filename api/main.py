@@ -1,6 +1,6 @@
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
-from api.routers import asr, cv, productos, sesiones, recomendaciones
+from api.routers import asr, cv, productos, sesiones, recomendaciones, retail_api, analytics
 from services.ai.real_detection import analyze_realtime_stream_real
 from services.nlu.heuristics import extract_intent_advanced
 import json
@@ -25,6 +25,8 @@ app.include_router(cv.router)
 app.include_router(productos.router)
 app.include_router(sesiones.router)
 app.include_router(recomendaciones.router)
+app.include_router(retail_api.router)
+app.include_router(analytics.router)
 
 # Lista de conexiones WebSocket activas
 active_connections: List[WebSocket] = []
