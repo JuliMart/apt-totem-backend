@@ -204,3 +204,4 @@ def sync_external_data(db: Session, products_limit: int = 50) -> Dict[str, int]:
     """Función de conveniencia para sincronizar datos externos"""
     client = get_retail_api_client()
     return client.sync_all_data(db, products_limit)
+

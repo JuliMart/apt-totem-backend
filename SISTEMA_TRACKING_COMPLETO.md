@@ -164,3 +164,4 @@ El sistema de tracking de recomendaciones está completamente implementado y pro
 
 **Servidor activo en**: http://127.0.0.1:8000
 **Documentación interactiva**: http://127.0.0.1:8000/docs
+

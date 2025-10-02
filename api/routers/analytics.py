@@ -265,3 +265,4 @@ def exportar_datos_sesion(
             
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error al exportar datos: {str(e)}")
+

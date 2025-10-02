@@ -94,3 +94,4 @@ Los endpoints están listos para ser consumidos por tu aplicación Flutter. Pued
 - **Recommendations API** para sugerencias personalizadas
 
 ¡Tu sistema de retail está completamente funcional y listo para usar! 🛍️
+
