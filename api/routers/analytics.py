@@ -82,15 +82,16 @@ def obtener_dashboard_analytics(
         from database.models import RecomendacionSesion, InteraccionUsuario
         
         # Total de sesiones activas
+        from sqlalchemy import func
         fecha_inicio = datetime.utcnow() - timedelta(days=dias)
-        total_sesiones = db.query(RecomendacionSesion.id_sesion).filter(
+        total_sesiones = db.query(func.count(func.distinct(RecomendacionSesion.id_sesion))).filter(
             RecomendacionSesion.fecha_hora >= fecha_inicio
-        ).distinct().count()
+        ).scalar()
         
         # Tipos de recomendación más usados
         tipos_recomendacion = db.query(
             RecomendacionSesion.tipo_recomendacion,
-            db.func.count(RecomendacionSesion.id_recomendacion).label('count')
+            func.count(RecomendacionSesion.id_recomendacion).label('count')
         ).filter(
             RecomendacionSesion.fecha_hora >= fecha_inicio
         ).group_by(RecomendacionSesion.tipo_recomendacion).all()
@@ -265,4 +266,5 @@ def exportar_datos_sesion(
             
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error al exportar datos: {str(e)}")
+
 

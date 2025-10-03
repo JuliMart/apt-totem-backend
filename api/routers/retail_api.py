@@ -176,3 +176,5 @@ def check_api_health():
             "message": "Error de conectividad con API externa"
         }
 
+
+

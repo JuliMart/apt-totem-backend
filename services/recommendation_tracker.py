@@ -300,3 +300,5 @@ def get_recommendation_tracker(db: Session) -> RecommendationTracker:
     """Obtener instancia del tracker de recomendaciones"""
     return RecommendationTracker(db)
 
+
+

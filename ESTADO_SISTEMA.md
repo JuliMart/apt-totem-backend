@@ -95,3 +95,5 @@ Los endpoints están listos para ser consumidos por tu aplicación Flutter. Pued
 
 ¡Tu sistema de retail está completamente funcional y listo para usar! 🛍️
 
+
+

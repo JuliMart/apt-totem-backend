@@ -199,3 +199,5 @@ pip install -r requirements.txt --force-reinstall
 
 MIT License - ver archivo LICENSE para detalles.
 
+
+
