@@ -264,3 +264,4 @@ def get_search_recommendation_engine(db: Session) -> SearchRecommendationEngine:
     """Obtener instancia del motor de búsqueda"""
     return SearchRecommendationEngine(db)
 
+

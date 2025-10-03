@@ -157,3 +157,4 @@ El sistema de búsqueda y recomendaciones está completamente implementado y pro
 **Documentación interactiva**: http://127.0.0.1:8000/docs
 **Health check**: http://127.0.0.1:8000/busqueda/health
 
+
