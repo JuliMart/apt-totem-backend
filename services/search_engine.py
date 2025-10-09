@@ -265,3 +265,4 @@ def get_search_recommendation_engine(db: Session) -> SearchRecommendationEngine:
     return SearchRecommendationEngine(db)
 
 
+
