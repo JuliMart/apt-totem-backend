@@ -148,11 +148,11 @@ def get_color_name(r: int, g: int, b: int) -> str:
         "amarillo dorado": [(200, 180, 0), (255, 220, 50)],
         "naranja": [(255, 150, 0), (255, 200, 100)],
         "naranja oscuro": [(200, 100, 0), (255, 150, 50)],
-        "negro": [(0, 0, 0), (50, 50, 50)],
-        "blanco": [(200, 200, 200), (255, 255, 255)],
-        "gris": [(100, 100, 100), (200, 200, 200)],
-        "gris oscuro": [(50, 50, 50), (100, 100, 100)],
-        "gris claro": [(200, 200, 200), (230, 230, 230)],
+        "negro": [(0, 0, 0), (30, 30, 30)],
+        "gris oscuro": [(30, 30, 30), (80, 80, 80)],
+        "gris": [(80, 80, 80), (150, 150, 150)],
+        "gris claro": [(150, 150, 150), (200, 200, 200)],
+        "blanco": [(220, 220, 220), (255, 255, 255)],
         "marron": [(100, 50, 0), (200, 150, 100)],
         "marron claro": [(150, 100, 50), (200, 150, 100)],
         "marron oscuro": [(50, 25, 0), (100, 75, 50)],
@@ -178,6 +178,14 @@ def get_color_name(r: int, g: int, b: int) -> str:
         "oro": [(200, 180, 0), (255, 220, 50)],
         "plata": [(180, 180, 200), (220, 220, 240)]
     }
+    
+    # Priorizar blanco si los valores RGB son altos
+    if r >= 220 and g >= 220 and b >= 220:
+        return "blanco"
+    
+    # Priorizar negro si los valores RGB son muy bajos
+    if r <= 30 and g <= 30 and b <= 30:
+        return "negro"
     
     for color_name, (min_rgb, max_rgb) in color_ranges.items():
         if (min_rgb[0] <= r <= max_rgb[0] and 
